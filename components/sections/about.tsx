@@ -21,13 +21,36 @@ export function About() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
         >
           <div className="md:col-span-1">
-            <div className="aspect-square rounded-xl border overflow-hidden">
-              <img
+            <motion.div
+              className="relative aspect-square rounded-xl overflow-hidden border border-border cursor-pointer"
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+            >
+              {/* Violet glow ring */}
+              <motion.div
+                className="absolute inset-0 rounded-xl ring-2 ring-brand/70 z-20 pointer-events-none"
+                variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                transition={{ duration: 0.25 }}
+              />
+              {/* Image — zoom + saturate on hover */}
+              <motion.img
                 src="/avatar.jpg"
                 alt="Avinash Thakur"
                 className="w-full h-full object-cover object-top"
+                variants={{
+                  rest: { scale: 1, filter: "saturate(0.8) brightness(0.95)" },
+                  hover: { scale: 1.07, filter: "saturate(1.15) brightness(1.05)" },
+                }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
               />
-            </div>
+              {/* Brand gradient shimmer from bottom */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-brand/25 via-transparent to-transparent pointer-events-none z-10"
+                variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                transition={{ duration: 0.35 }}
+              />
+            </motion.div>
           </div>
 
           <div className="md:col-span-2 flex flex-col gap-4">

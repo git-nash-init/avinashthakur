@@ -39,6 +39,11 @@ export const metadata: Metadata = {
       "Building SaaS for offline businesses. Watch demos, try the products, hire me for custom work.",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: "/avatar.jpg",
+    shortcut: "/avatar.jpg",
+    apple: "/avatar.jpg",
+  },
 };
 
 export default function RootLayout({
