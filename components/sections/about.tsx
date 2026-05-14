@@ -21,9 +21,12 @@ export function About() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"
         >
           <div className="md:col-span-1">
-            <div className="aspect-square rounded-xl bg-gradient-to-br from-brand/15 to-card border flex items-center justify-center text-muted-foreground text-sm overflow-hidden">
-              {/* TODO: replace with /public/avatar.jpg */}
-              Photo
+            <div className="aspect-square rounded-xl border overflow-hidden">
+              <img
+                src="/avatar.jpg"
+                alt="Avinash Thakur"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </div>
 

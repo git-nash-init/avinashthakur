@@ -38,8 +38,12 @@ export function CaseStudies() {
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease: "easeOut" }}
               >
                 <Card className="overflow-hidden h-full group hover:border-brand/40 transition-colors py-0">
-                  <div className="aspect-[16/10] bg-muted border-b flex items-center justify-center text-muted-foreground text-xs">
-                    {p.name}
+                  <div className="aspect-[16/10] bg-muted border-b overflow-hidden">
+                    <img
+                      src={p.thumbnail}
+                      alt={p.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <CardContent className="p-5 flex flex-col gap-3">
                     <div>
