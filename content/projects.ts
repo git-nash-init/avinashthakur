@@ -142,6 +142,22 @@ export const projects: Project[] = [
     status: "live",
   },
   {
+    slug: "cloudwiseavenue",
+    name: "CloudWise Avenue",
+    tier: "case-study",
+    industry: "Community SaaS / Creator Economy",
+    blurb: "All-in-one community platform — courses, events, live streaming, and memberships under one brand.",
+    description:
+      "Circle.so-style community platform for creators and businesses. Drag-and-drop course builder, real-time chat, event hosting with up to 10k concurrent viewers, subscription payments, AI member-support agents, email marketing, and a native mobile app — all white-labelled under the client's brand.",
+    stack: ["React", "Vite", "React Router", "Vanilla CSS", "Lucide React"],
+    links: {
+      demo: "https://cloudwiseavenue.vercel.app",
+      source: "https://github.com/git-nash-init/cloudwiseavenue",
+    },
+    thumbnail: "/projects/cloudwiseavenue.png",
+    status: "live",
+  },
+  {
     slug: "creativebee",
     name: "CreativeBee",
     tier: "case-study",
