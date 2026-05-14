@@ -16,28 +16,18 @@ export function Hero() {
 
   useGSAP(
     () => {
+      // Set initial states immediately — prevents flash of content before GSAP runs
+      gsap.set(".hero-word", { yPercent: 110 });
+      gsap.set(".hero-sub", { y: 24, opacity: 0 });
+      gsap.set(".hero-cta", { y: 16, opacity: 0 });
+      gsap.set(".hero-badge", { scale: 0.7, opacity: 0 });
+
       const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
 
-      tl.from(".hero-word", {
-        yPercent: 110,
-        duration: 1.1,
-        stagger: 0.08,
-      })
-        .from(
-          ".hero-sub",
-          { y: 24, opacity: 0, duration: 0.8 },
-          "-=0.6",
-        )
-        .from(
-          ".hero-cta",
-          { y: 16, opacity: 0, duration: 0.5, stagger: 0.08 },
-          "-=0.4",
-        )
-        .from(
-          ".hero-badge",
-          { scale: 0.7, opacity: 0, duration: 0.5 },
-          "-=0.6",
-        );
+      tl.to(".hero-word", { yPercent: 0, duration: 1.1, stagger: 0.08 })
+        .to(".hero-sub", { y: 0, opacity: 1, duration: 0.8 }, "-=0.6")
+        .to(".hero-cta", { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 }, "-=0.4")
+        .to(".hero-badge", { scale: 1, opacity: 1, duration: 0.5 }, "-=0.6");
 
       gsap.to(".hero-orb", {
         yPercent: 35,
@@ -67,13 +57,20 @@ export function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
-        <Badge
-          variant="outline"
-          className="hero-badge mb-8 gap-2 border-brand/40 text-brand bg-brand/5"
+        <a
+          href="https://cal.com/avinashthakur"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero-badge inline-block mb-8"
         >
-          <span className="size-2 rounded-full bg-brand animate-pulse" />
-          Available for freelance · Open to talk
-        </Badge>
+          <Badge
+            variant="outline"
+            className="gap-2 border-brand/40 text-brand bg-brand/5 hover:bg-brand/10 hover:border-brand/70 transition-colors cursor-pointer"
+          >
+            <span className="size-2 rounded-full bg-brand animate-pulse" />
+            Available for freelance · Open to talk ↗
+          </Badge>
+        </a>
 
         <h1 className="font-sans text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
           <span className="block overflow-hidden pb-1">

@@ -29,9 +29,18 @@ export function FeaturedProducts() {
               transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
             >
               <Card className="overflow-hidden h-full group hover:border-brand/40 transition-colors py-0">
-                <div className="aspect-[16/9] bg-gradient-to-br from-brand/10 via-card to-card border-b flex items-center justify-center text-muted-foreground text-sm">
-                  {/* TODO: replace with /public/projects/{slug}.png screenshot */}
-                  <span>Screenshot — {p.name}</span>
+                <div className="aspect-[16/9] bg-gradient-to-br from-brand/10 via-card to-card border-b overflow-hidden relative">
+                  {p.thumbnail && !p.thumbnail.includes("coming-soon") ? (
+                    <img
+                      src={p.thumbnail}
+                      alt={p.name}
+                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
+                      <span>Screenshot — {p.name}</span>
+                    </div>
+                  )}
                 </div>
                 <CardContent className="p-6 flex flex-col gap-4">
                   <div className="flex items-start justify-between gap-3">

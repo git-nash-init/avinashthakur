@@ -37,7 +37,7 @@ export function About() {
               <motion.img
                 src="/avatar.jpg"
                 alt="Avinash Thakur"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
                 variants={{
                   rest: { scale: 1, filter: "saturate(0.8) brightness(0.95)" },
                   hover: { scale: 1.07, filter: "saturate(1.15) brightness(1.05)" },
