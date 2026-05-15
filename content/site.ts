@@ -5,7 +5,7 @@ export const site = {
   email: "avinash.saitm@gmail.com",
   tagline: "I build SaaS products for offline businesses.",
   bio: "Full-stack developer freelancing since 2025. B.Tech AI/ML at SAITM (graduating 2028). Shipped 8+ web apps for paying clients — CRMs, business platforms, payment-integrated systems. Currently building a multi-tenant Gym CRM as my first SaaS product.",
-  location: "Farrukhnagar, India",
+  location: "Gurugram, India",
   social: {
     github: "https://github.com/git-nash-init",
     linkedin: "https://www.linkedin.com/in/avinash-ai",
