@@ -143,3 +143,11 @@
 @utility text-pretty {
   text-wrap: pretty;
 }
+
+/* ── View Transitions: radial bulb reveal ──────────────────────────── */
+/* Suppress the default browser cross-fade — our JS drives the animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 import { site } from "@/content/site";
 
@@ -45,9 +46,12 @@ export function Nav() {
             </a>
           ))}
         </div>
-        <Button asChild size="sm" variant="outline">
-          <a href="#hire-me">Get in touch</a>
-        </Button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Button asChild size="sm" variant="outline">
+            <a href="#hire-me">Get in touch</a>
+          </Button>
+        </div>
       </nav>
     </header>
   );
